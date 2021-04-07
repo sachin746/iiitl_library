@@ -1,0 +1,58 @@
+<%- include('./partials/adminheader')%>
+
+<div class="row mt-2">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">Issue Book</h1>
+        <%- include ('./partials/messages') %>
+          <form action="/books/issued" method="POST">
+            <div class="form-group">
+              <label for="email">Book No.</label>
+              <input type="text" id="email" name="bookno" class="form-control" placeholder="Book No." required />
+            </div>
+            <div class="form-group">
+              <label for="email">Roll No.</label>
+              <input type="text" id="password" name="rollno" class="form-control" placeholder="Enter Roll No." />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Issue Book</button>
+          </form>
+      </div>
+    </div>
+  </div>
+
+<br>
+
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Roll No.</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Book No.</th>
+            <th scope="col">Issue Date</th>
+            <th scope="col">Return Date</th>
+            <th scope="col">Delete</th>
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%issueds.forEach(function(issued){%>
+        <tr>
+            <td scope='row' ><%=issued.rollno%></td>
+            <td ><%=issued.book%></td>
+            <td ><%=issued.bookno%></td>
+            <td ><%=issued.created.toDateString()%></td>
+            <td ><%=issued.return.toDateString()%></td>
+            <td>
+                <form action="/books/issued/delete/<%= issued._id %>" method="POST">
+                    <button class="button btn-primary btn-block">Delete</button>
+                </form>
+            </td>
+            <td>
+                <form action="/books/issued/view/<%= issued._id %>" method='get'>
+                    <button class="button btn-primary btn-block">View</button>
+                </form>
+            </td>
+        </tr>
+        <%})%>
+    </tbody>
+</table>

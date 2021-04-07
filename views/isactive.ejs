@@ -1,0 +1,19 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>Email verification</h1>
+      <%- include ('./partials/messages') %>
+      <p>We have send a opt on your email address</p>
+        <form action="/user/emailverify" method="POST">
+          <div class="form-group">
+            <label for="email">OTP</label>
+            <input type="number" id="email" name="code" class="form-control" placeholder="Enter OTP" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">submit</button>
+        </form>
+        <p class="lead mt-4">
+         Resend OTP?<a href="/user/emailresend">Resend</a>
+        </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/"> <i class="fas fa-book"></i> IIITL LIBRARY</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/Dashboard">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/Books">Books</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/books/admin">Admin</a>
+      </li>
+    </ul>
+    <span class="nav navbar-nav navbar-right">
+      <%if(!currentUser){%>
+        <li class="nav-item"><a class="nav-link" href="/user/register"><i class="fas fa-user-plus"></i></i> Register</a></li>
+        <li class="nav-item"><a class="nav-link" href="/user/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <%}else{%>
+        <li class="nav-item"><a class="nav-link" href="#">Signed In As <%=currentUser.name%></a></li>
+        <li class="nav-item"><a class="nav-link" href="/user/logout">Logout</a></li>
+        <%}%>
+    </span>
+  </div>
+</nav>  
+
+         

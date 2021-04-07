@@ -1,0 +1,36 @@
+<div class=" container">
+    <%- include ('./partials/messages') %>
+<table>
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td><%=student.name%></td>
+            </tr>
+            <tr>
+                <td>Roll No.</td>
+                <td><%=student.rollno%></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><%=student.email%></td>
+            </tr>
+            <tr>
+                <td>Book NO.</td>
+                <td><%=student.bookno%></td>
+            </tr>
+            <tr>
+                <td>Book Name</td>
+                <td><%=student.book%></td>
+            </tr>
+            <tr>
+                <td>Issued On</td>
+                <td><%=student.created%></td>
+            </tr>
+            <tr>
+                <td>Return Date</td>
+                <td><%=student.return%></td>
+            </tr>
+        </tbody>
+    </table>
+<a href="/books/mail/<%=student.email%>/<%=student.book%>/<%=student.id%>" class="btn btn-primary">send mail for Book Return</a>
+</div>

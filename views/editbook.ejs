@@ -1,0 +1,33 @@
+<%- include('./partials/adminheader')%>
+<br>
+<div class="row mt-3">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+          New Book
+        </h1>
+        <%- include ('./partials/messages') %>
+        <form action="/books/edit/<%=book._id%>" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" class="form-control" placeholder="title" value="<%=book.title%>" required>
+          </div>
+          <div class="form-group">
+            <label for="image">Upload Image</label>
+            <input type="file" name="image" class="form-control" placeholder="upload another image" value="<%=book.image%>" required>
+          </div>
+          <div class="form-group">
+            <label for="total">Total Book</label>
+            <input type="text" name="total" class="form-control" placeholder="Total books"required value="<%=book.total%>" >
+          </div>
+          <div class="form-group">
+            <label for="bookno">Book No.</label>
+            <input type="text" name="bookno" class="form-control" placeholder="Book No"required value="<%=book.bookno%>">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Add Book
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>

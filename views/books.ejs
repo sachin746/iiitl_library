@@ -1,0 +1,19 @@
+  <div style="display: flex;">
+    <%books.forEach(function(book){%>
+      <div class="card mt-2 mb-2 ml-2 mr-2" style="width: 13rem;">
+        <img class="card-img-top" src="<%=book.image%>" alt="Book Image">
+        <div class="card-body">
+          <div class="caption">
+            <h6>
+              <%=book.title%>
+            </h6>
+          </div>
+          <div class="caption">
+            <h6>
+              Books available:<%=book.total%>
+            </h6>
+          </div>
+        </div>
+      </div>
+      <%})%>
+  </div>

@@ -1,0 +1,28 @@
+<%- include('./partials/adminheader')%>
+
+<%- include ('./partials/messages') %>
+  <div style="display: flex;flex-wrap: wrap;">
+    <%books.forEach(function(book){%>
+      <div class="card mt-2 mb-2 ml-2 mr-2" style="width: 13rem;">
+        <img class="card-img-top" src="<%=book.image%>" alt="Book Image">
+        <div class="card-body">
+          <div class="caption">
+            <h6>
+              <%=book.title%>
+            </h6>
+          </div>
+          <div class="caption">
+            <h6>
+              Books available:<%=book.total%>
+            </h6>
+            <h6>
+              Books No: <%=book.bookno%>
+            </h6>
+          </div>
+          <a href="/books/edit/<%=book._id%>" class="btn btn-primary mr-1">Edit</a>
+          <form action="/books/delete/<%=book._id%>" method="POST">
+          <button class="btn btn-primary">Delete</button></form>
+        </div>
+      </div>
+      <%})%>
+  </div>
